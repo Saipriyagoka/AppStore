@@ -1,0 +1,27 @@
+version: "2"
+services:
+  app-store:
+    build: .
+    image: store_api
+    command: uvicorn main:app --reload --host 0.0.0.0 --port 8080
+    restart: unless-stopped
+    ports:
+      - "7899:8080"
+    volumes:
+      - ".logs/:/store_api/logs/"
+
+  # mongo:
+  #   build: .
+  #   environment:
+  #     - MONGO_URI=mongodb://mongodb-myapp:27017/myapp
+  #   volumes:
+  #     - .:/app
+  #   ports:
+  #     - "5000:5000"
+  #   depends_on:
+  #     - mongodb-myapp
+
+  mongodb-myapp:
+    image: mongo
+    ports:
+      - "1307:1307"

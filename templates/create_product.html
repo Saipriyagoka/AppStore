@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="text-danger font-weight-bold">
+        {% for error in errors %}
+            <li>{{error}}</li>
+        {% endfor %}
+        </div>
+
+<form class="form-horizontal" method="POST">
+    <fieldset>
+    <br /><br />
+    <!-- Form Name -->
+    <legend align="center">Create a Product</legend>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Item</label>  
+      <div class="col-md-4">
+      <input id="item" name="item" type="text" placeholder="Item Name" class="form-control input-md" required="" value="{{item}}">
+        
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Item Category</label>  
+      <div class="col-md-4">
+      <input id="item_category" name="item_category" type="text" placeholder="Item Category" class="form-control input-md" required="" value="{{item_category}}">
+        
+      </div>
+    </div>
+    
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="selectbasic">Quantity</label>
+      <div class="col-md-4">
+        <select id="quantity" name="quantity" type="number" class="form-control" value="{{quantity}}">
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+          <option value=6>6</option>
+          <option value=7>7</option>
+          <option value=8>8</option>
+          <option value=9>9</option>
+          <option value=10>10</option>
+        </select>
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Price</label>  
+      <div class="col-md-4">
+      <input id="price" name="price" type="number" placeholder="Price" class="form-control input-md" required="" value="{{price}}">
+        
+      </div>
+    </div>
+    
+    <!-- Button -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="singlebutton"></label>
+        <div class="col-md-4">
+        <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+        </div>
+    </div>
+
+    </fieldset>
+    </form>
+    
+    </div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  
+     <!-- Form Name -->
+     <br /><br />
+     <legend align="center">List of Products</legend>
+
+     <div class="row">
+        {% for product in products %}
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-9">
+                    <h1 class="display-5 fw-bolder">{{ product.item }}</h1>
+                    <h4 class="text-decoration-line-through">Item Category: {{product.item_category}}</h4>
+                    <h4 class="text-decoration-line-through">Item Quantity: {{product.quantity}}</h4>
+                    <h4 class="text-decoration-line-through">Item Price: {{product.price}}</h4>
+                    <a href=http://localhost:7899/remove_from_cart?item_id={{product.item_id}}>
+                        <button style="background-color: rgb(78, 180, 217); border: none; color: #fff; padding: 7px 12px; text-align: center; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 7px;">Remove From Cart
+                    </button></a>
+                </div>
+            </div>
+           <br /><br />
+        {% endfor %}
+        <form align="center" method='post' action='place_order'>
+        <button style="background-color: rgb(78, 180, 217); border: none; color: #fff; padding: 15px 32px; text-align: center; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 7px;">Place Order 
+        </button></a></form>
+        </div>
+</div>

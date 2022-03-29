@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+     <!-- Form Name -->
+     <br /><br />
+     <h1 align="center">Order Invoice</h1>
+
+     <div class="row">
+            <!-- {{response}} -->
+        <h3 class="display-5 fw-bolder">Date and Time of Purchase: {{ response.purchased_date}}</h3>
+        
+        {% for product in response.list_of_products %}
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-9">
+                    <h2 class="display-5 fw-bolder">{{ product.item }}</h2>
+                    <h5 class="text-decoration-line-through">Item Category: {{product.item_category}}</h5>
+                    <h5 class="text-decoration-line-through">Quantity: {{product.quantity}}</h5>
+                    <h5 class="text-decoration-line-through">Item Price: {{product.price}}</h5>
+                    <h5 class="text-decoration-line-through">Final Price: {{product.final_price}}</h5>
+                    <h6 class="text-decoration-line-through">Tax Amount: {{product.tax_amount}}</h5>
+                    <h5 class="text-decoration-line-through">Tax %: {{product.tax_percentage}}</h5>
+                    <h5 class="text-decoration-line-through">Discount Amount: {{product.discount_amount}}</h5>
+                    <h5 class="text-decoration-line-through">Applicable Price: {{product.applicable_price}}</h5>
+                </div>
+            </div>
+           <br />
+        {% endfor %}
+        <h3 class="display-5 fw-bolder">Total Discount: {{ response.discount}}</h3>
+        <h3 class="display-5 fw-bolder">Total Tax: {{ response.total_tax }}</h3>
+        <h3 class="display-5 fw-bolder">Total Amount: {{ response.total_amount }}</h3>
+    
+</div>
