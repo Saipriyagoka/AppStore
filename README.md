@@ -13,12 +13,12 @@ Cloning and Installation Steps:
 Application WorkFlow:
 -------------------------------------------------------------------------------------
 
-1. Add to cart: create a new product and store it in a DB
+1. Add to cart: Create a new product and store it in a DB
 
 2. List of Products: Listing of all the Products which are currently there in DB
 
 3. Remove From Cart: Deleting the Product from the DB
 
-4. Place order: consider whatever is there in the DB and create a Order Invoice
+4. Place order: Consider whatever is there in the DB and create a Order Invoice
 
 
